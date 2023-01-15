@@ -19,6 +19,15 @@ $foo-accent: mat.define-palette($palette-accent);
 // The warn palette is optional (defaults to red).
 $foo-warn: mat.define-palette(mat.$red-palette);
 
+// Define a typography theme.
+$foo-typography: mat.define-typography-config(
+  $font-family: "Cormorant Garamond",
+  $button: mat.define-typography-level(
+    $font-family: "Roboto",
+    $font-size: 14px,
+  )
+);
+
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
 $foo-theme: mat.define-light-theme((
@@ -26,7 +35,8 @@ $foo-theme: mat.define-light-theme((
     primary: $foo-primary,
     accent: $foo-accent,
     warn: $foo-warn,
-  )
+  ),
+  typography: $foo-typography,
 ));
 
 // Include theme styles for core and each component used in your app.
@@ -37,4 +47,4 @@ $foo-theme: mat.define-light-theme((
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: "Cormorant Garamond", "Helvetica Neue", sans-serif; }
